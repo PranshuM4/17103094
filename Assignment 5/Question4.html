@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 4</title>
+</head>
+<body>
+<form>
+    <label>Enter width: </label>
+    <input type="text" id="width" name="width">
+    <label>Enter no of rows: </label>
+    <input type="text" id="rows" name="rows">
+    <input type="submit" value="Submit" id="myButton">
+</form>
+
+</body>
+
+<script>
+
+    document.getElementById("myButton").addEventListener("click", function()
+    {
+
+        var width = document.getElementById("width").value;
+        var rows = document.getElementById("rows").value;
+
+        width= width/2;
+
+	if(width%2==0)
+        {
+            width=width-1;
+        }
+        var i=0;
+        var j;
+        
+	var r=0;
+	while(r<rows)
+        {
+            while(i<width)
+            {
+                j=width-i;
+		while(j>=0)
+                {
+                    document.write("_");
+                    j--;
+		}
+
+                j=0;
+                while(j<(2*i+1))
+                {
+                    if(r==0 && j==0 && i==0)
+                    {
+                        document.write("*");
+                    }
+                    else
+                    {
+                        document.write("0");
+                    }
+                j++;
+		}
+           document.write("<br>");
+           i++;	 
+	   }
+        r++;
+	}
+
+	j=0;
+        while(j<10)
+        {
+            i=0;
+	    while(i<width)
+            {
+                document.write("_");
+            	i++;
+	    }
+	    i=0;
+            while(i<=2)
+            {
+                document.write("0");
+            	i++;
+	    }
+            document.write("<br>");
+        j++;
+	}
+
+    }, false);
+</script>
+</html>
